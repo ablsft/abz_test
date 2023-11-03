@@ -15,5 +15,5 @@ class Employee(models.Model):
                         verbose_name='Должность', related_name='employees')
     employment_date = models.DateField(verbose_name='Дата приёма на работу')
     salary = models.IntegerField(verbose_name='Размер заработной платы')
-    manager = models.ForeignKey('self', on_delete=models.CASCADE,
+    manager = models.ForeignKey('self', on_delete=models.CASCADE, null=True,
                         verbose_name='Начальник', related_name='subordinates')
